@@ -1,6 +1,7 @@
 package com.example.prueba_crud.model;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "employee")
@@ -16,7 +17,8 @@ public class employee {
     private String Name;
 
     @Column(name = "Salary")
-    private String Salary;
+    private long Salary;
+
     @Column(name = "depto_id")
     private long depto_id;
 
@@ -36,11 +38,11 @@ public class employee {
         Name = name;
     }
 
-    public String getSalary() {
+    public long getSalary() {
         return Salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(long salary) {
         Salary = salary;
     }
 
