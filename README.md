@@ -23,8 +23,8 @@ FOREIGN KEY (depto_id) REFERENCES Departament(ID)
 );
 
 
-select Departament.ID,Departament.Name, count(*) from employee
-inner join Departament 
+select Departament.ID,Departament.Name, count(Employee.Name) from Departament
+left outer join employee
 on employee.depto_id = Departament.ID
 group by Departament.ID;
 
